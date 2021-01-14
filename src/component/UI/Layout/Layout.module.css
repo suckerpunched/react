@@ -1,0 +1,10 @@
+.content {
+  position: fixed;
+  height: calc(100% - 96px);
+  width: calc(100% - 364px);
+
+  margin: 16px;
+  left: 332px;
+
+  background-color: #ededed;
+}

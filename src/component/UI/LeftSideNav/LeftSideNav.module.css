@@ -1,0 +1,11 @@
+.mainDiv {
+  position: fixed;
+  height: calc(100% - 64px);
+  width: 300px;
+
+  padding-top: 16px;
+  padding-right: 16px;
+  padding-left: 16px;
+
+  background-color: #b8b8b8;
+}
