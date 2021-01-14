@@ -9,3 +9,9 @@
 
   background-color: #b8b8b8;
 }
+
+@media (max-width:800px) {
+  .mainDiv {
+    visibility: hidden;
+  }
+}
