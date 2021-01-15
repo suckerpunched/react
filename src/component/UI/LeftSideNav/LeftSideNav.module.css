@@ -1,17 +1,14 @@
 .mainDiv {
   position: fixed;
-  height: calc(100% - 64px);
+  height: 100%;
   width: 300px;
+
+  z-index: 100;
+  top: 0;
 
   padding-top: 16px;
   padding-right: 16px;
   padding-left: 16px;
 
-  background-color: #b8b8b8;
-}
-
-@media (max-width:800px) {
-  .mainDiv {
-    visibility: hidden;
-  }
+  background-color: #5296A5;
 }

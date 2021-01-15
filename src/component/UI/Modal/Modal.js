@@ -12,7 +12,7 @@ class Modal extends Component {
   render() {
     return (
       <>
-        <Backdrop show={this.props.show} clicked={this.props.modalClosed}/>
+        <Backdrop show={this.props.show} clicked={this.props.close}/>
         <div className={styles.mainDiv} style={{ 
           transform: this.props.show ? 'translateY(0)' : 'translateY(-100vh)',
           display: this.props.show ? 'block' : 'none'

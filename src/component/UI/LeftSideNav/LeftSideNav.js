@@ -1,23 +1,27 @@
-import React from 'react';
+import React, { Component } from 'react';
+
+import Backdrop from '../Backdrop/Backdrop';
 
 import styles from './LeftSideNav.module.css';
 
-export default function LeftSideNav(props) {
+class LeftSideNav extends Component {
+  shouldComponentUpdate(nextProps, nextState) {
+    return nextProps.show !== this.props.show || nextProps.children !== this.props.children;
+  }
 
-  return (
-    <div className={styles.mainDiv}>
-      <nav>
-      
-        <div>
-          nav items
+  render() {
+    return (
+      <>
+        <Backdrop show={this.props.show} clicked={this.props.close}/>
+        <div className={styles.mainDiv} style={{ 
+          transform: this.props.show ? 'translateY(0)' : 'translateY(-100vh)',
+          display: this.props.show ? 'block' : 'none'
+        }}>
+          {this.props.children}
         </div>
-
-        <div>
-          nav footer
-        </div>
-
-      </nav>
-    </div>
-  )
-
+      </>
+    )
+  }
 }
+
+export default LeftSideNav;

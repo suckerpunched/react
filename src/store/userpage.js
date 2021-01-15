@@ -2,8 +2,8 @@ import { persistable } from './shared';
 import * as _type from './action';
 
 let initialState = {
-  userFirstName: '',
-  userLastName: '',
+  userFirstName: 'john',
+  userLastName: 'smith',
   userCounter: 0,
 };
 
