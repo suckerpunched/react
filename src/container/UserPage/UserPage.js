@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import * as _type from '../../store/action';
 
 import Modal from '../../component/UI/Modal/Modal';
+import TinyLineChart from '../../component/Chart/TinyLineChart/TinyLineChart';
 
 import styles from './UserPage.module.css';
 
@@ -30,6 +31,8 @@ export default function UserPage() {
         <div>{userFirstName}</div>
         <div>{userLastName}</div>
         <div>{userCounter}</div>
+
+        <TinyLineChart/>
 
         <button onClick={() => dispatch({ type:_type.SET_USER_FIRST_NAME, payload:'sucker' })}>first</button>
         <button onClick={() => dispatch({ type:_type.SET_USER_LAST_NAME, payload:'punched' })}>last</button>
