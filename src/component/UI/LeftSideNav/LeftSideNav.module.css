@@ -3,12 +3,11 @@
   height: 100%;
   width: 300px;
 
-  z-index: 100;
-  top: 0;
+  z-index: 200;
 
   padding-top: 16px;
   padding-right: 16px;
   padding-left: 16px;
 
-  background-color: #5296A5;
+  background-color: black;
 }

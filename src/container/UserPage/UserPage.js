@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import * as _type from '../../store/action';
 
 import Modal from '../../component/UI/Modal/Modal';
+import StackedAreaChart from '../../component/Chart/StackedAreaChart/StackedAreaChart';
 import TinyLineChart from '../../component/Chart/TinyLineChart/TinyLineChart';
 
 import styles from './UserPage.module.css';
@@ -18,12 +19,14 @@ export default function UserPage() {
 
   return (
     <div className={styles.mainDiv}>
+
       <button onClick={async () => { 
         await dispatch({ type:_type.LOAD_SESSION, payload:'userpage' })
         setModalVisible(true)
       }}>show modal</button>
+
       <button onClick={() => dispatch({ type:_type.CLEAR_SESSION, payload:'userpage' })}>clear session</button>
-        
+
       <Modal show={modalVisible} close={async () => {
         await dispatch({ type:_type.SAVE_SESSION, payload:'userpage' })
         setModalVisible(false);
@@ -32,6 +35,7 @@ export default function UserPage() {
         <div>{userLastName}</div>
         <div>{userCounter}</div>
 
+        <StackedAreaChart/>
         <TinyLineChart/>
 
         <button onClick={() => dispatch({ type:_type.SET_USER_FIRST_NAME, payload:'sucker' })}>first</button>

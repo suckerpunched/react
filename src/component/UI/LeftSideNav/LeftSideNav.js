@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Box } from 'rebass';
 
 import Backdrop from '../Backdrop/Backdrop';
 
@@ -12,13 +13,22 @@ class LeftSideNav extends Component {
   render() {
     return (
       <>
-        <Backdrop show={this.props.show} clicked={this.props.close}/>
-        <div className={styles.mainDiv} style={{ 
-          transform: this.props.show ? 'translateY(0)' : 'translateY(-100vh)',
-          display: this.props.show ? 'block' : 'none'
-        }}>
+        <Backdrop show={this.props.show} clicked={this.props.close} />
+        
+        <Box
+          sx={{
+            p: 3,
+            flexGrow: 1,
+            flexBasis: 300,
+          }}
+          className={styles.mainDiv}
+          style={{ 
+            transform: this.props.show ? 'translateY(0)' : 'translateY(-100vh)',
+            display: this.props.show ? 'block' : 'none'
+          }}
+        >
           {this.props.children}
-        </div>
+        </Box>
       </>
     )
   }

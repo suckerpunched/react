@@ -12,7 +12,7 @@ function App() {
       <Switch>
 
         <Route exact path='/userpage' render={(props) => <UserPage {...props}/>}/>
-        <Route exact path='/notuserpage' render={(props) => <UserPage {...props}/>}/>
+        <Route exact path='/notuserpage' render={(props) => <div>what'd you expect?</div>}/>
 
         <Redirect from='*' to='/'/>
       
