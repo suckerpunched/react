@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import { HashRouter } from 'react-router-dom';
 
 import { Provider } from 'react-redux';
+import { ThemeProvider } from 'theme-ui';
+import theme from './theme';
 
 import reportWebVitals from './reportWebVitals';
 import App from './container/App/App';
@@ -12,13 +14,15 @@ import store from './store';
 import './index.css';
 
 const application = (
-  <Provider store={store}>
-    <HashRouter>
-      <React.Suspense fallback={<div/>}>
-        <App/>
-      </React.Suspense>
-    </HashRouter>
-  </Provider>
+  <ThemeProvider theme={theme}>
+    <Provider store={store}>
+      <HashRouter>
+        <React.Suspense fallback={<div/>}>
+          <App/>
+        </React.Suspense>
+      </HashRouter>
+    </Provider>
+  </ThemeProvider>
 );
 
 ReactDOM.render(application, document.getElementById('root'));
