@@ -1,8 +1,0 @@
-.mainDiv {
-  position: fixed;
-  height: calc(100% - 64px);
-  width: calc(100% - 64px);
-  
-  margin:32px;
-  /* background-color: burlywood; */
-}

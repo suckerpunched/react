@@ -1,9 +1,12 @@
 import React from "react";
 import { useSelector } from "react-redux";
 
-import { AreaChart, Area, XAxis, CartesianGrid, Tooltip } from "recharts";
+import { 
+    ResponsiveContainer,
+    AreaChart, Area
+ } from "recharts";
 
-export default function TinyLineChart() {
+export default function SimpleAreaChart() {
   const userCounter = useSelector((state) => state.userpage.userCounter);
 
   const data = [
@@ -70,20 +73,21 @@ export default function TinyLineChart() {
   ];
 
   return (
-    <AreaChart
-      width={300}
-      height={200}
+    <ResponsiveContainer>
+        <AreaChart
+      // width={16}
+      // height={20}
       data={data}
-      margin={{
-        top: 10,
-        right: 30,
-        left: 0,
-        bottom: 0,
-      }}
+      // margin={{
+      //   top: 10,
+      //   right: 30,
+      //   left: 0,
+      //   bottom: 0,
+      // }}
     >
-      <CartesianGrid strokeDasharray="3 3" />
+      {/* <CartesianGrid strokeDasharray="3 3" />
       <XAxis dataKey="date" />
-      <Tooltip />
+      <Tooltip /> */}
       <Area
         type="monotone"
         dataKey="clicks"
@@ -99,5 +103,6 @@ export default function TinyLineChart() {
         fill="#82ca9d"
       />
     </AreaChart>
+    </ResponsiveContainer>
   );
 }

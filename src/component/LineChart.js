@@ -2,10 +2,11 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 
 import {
+  ResponsiveContainer,
   LineChart, Line
 } from 'recharts';
 
-export default function TinyLineChart() {
+export default function SimpleLineChart() {
   const userCounter = useSelector(state => state.userpage.userCounter);
 
     const data = [
@@ -42,9 +43,11 @@ export default function TinyLineChart() {
     ];
 
   return (
-    <LineChart width={300} height={100} data={data}>
-      <Line type="monotone" dataKey="clicks" stroke="#8884d8" strokeWidth={2} />
-      <Line type="monotone" dataKey="impressions" stroke="#eb4034" strokeWidth={2} />
-    </LineChart>
+    <ResponsiveContainer>
+      <LineChart data={data}>
+        <Line type="monotone" dataKey="clicks" stroke="#8884d8" strokeWidth={2} />
+        <Line type="monotone" dataKey="impressions" stroke="#eb4034" strokeWidth={2} />
+      </LineChart>
+    </ResponsiveContainer>
   );
 }

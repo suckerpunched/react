@@ -6,7 +6,6 @@ import { Provider } from 'react-redux';
 
 import reportWebVitals from './reportWebVitals';
 import App from './container/App/App';
-import Spinner from './component/UI/Spinner/Spinner';
 
 import store from './store';
 
@@ -15,7 +14,7 @@ import './index.css';
 const application = (
   <Provider store={store}>
     <HashRouter>
-      <React.Suspense fallback={<Spinner/>}>
+      <React.Suspense fallback={<div/>}>
         <App/>
       </React.Suspense>
     </HashRouter>
