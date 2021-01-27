@@ -12,7 +12,9 @@ export function persistable(currentState, action) {
       return currentState;
     case _type.LOAD_SESSION:
       const serialisedState = sessionStorage.getItem(parseInt(action.payload, 36));
+      console.log('loading')
       if (serialisedState === null) return currentState;
+      console.log('loaded')
       return {...currentState, ...JSON.parse(Buffer.from(serialisedState, 'base64').toString())};
     default: return currentState
   }

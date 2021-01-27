@@ -7,7 +7,7 @@ import { ThemeProvider } from 'theme-ui';
 import theme from './theme';
 
 import reportWebVitals from './reportWebVitals';
-import App from './container/App/App';
+import App from './container/App';
 
 import store from './store';
 

@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
 
-import userpageReducer from './userpage';
+import playgroundReducer from './playground';
 
 const rootReducers = combineReducers({
-  userpage: userpageReducer,
+  playground: playgroundReducer,
 });
 
 export default rootReducers;
