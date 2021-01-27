@@ -10,14 +10,15 @@ export default {
   },
   colors: {
     background: "#f8f8f8",
+    backdrop: 'rgba(0, 0, 0, 0.5)',
 
     primary: '#7834a8',
-    card: "#dcf2e6",
+    modal_background: "#dcf2e6",
     
     modes: {
-      ari_mode: {
+      alt_mode: {
         primary: '#32a852',
-        card: "#eadcf2",
+        modal_background: "#eadcf2",
       }
     }
   }
