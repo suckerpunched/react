@@ -44,7 +44,7 @@ export default function SimpleLineChart() {
 
   return (
     <ResponsiveContainer>
-      <LineChart data={data}>
+      <LineChart style={{backgroundColor:'#f2f2f2', borderRadius:'8px'}} data={data}>
         <Line type="monotone" dataKey="clicks" stroke="#8884d8" strokeWidth={2} />
         <Line type="monotone" dataKey="impressions" stroke="#eb4034" strokeWidth={2} />
       </LineChart>

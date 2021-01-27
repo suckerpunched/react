@@ -84,6 +84,7 @@ export default function SimpleAreaChart() {
       //   left: 0,
       //   bottom: 0,
       // }}
+      style={{backgroundColor:'#f2f2f2', borderRadius:'8px'}} 
     >
       {/* <CartesianGrid strokeDasharray="3 3" />
       <XAxis dataKey="date" />
