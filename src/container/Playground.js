@@ -20,7 +20,7 @@ export default function Playground(props) {
 
   return (
     <>
-      <Button mt={2} mr={1} onClick={() => { 
+      <Button ml={2} mt={2} mr={1} onClick={() => { 
         dispatch({ type:_type.LOAD_SESSION, payload:'playground' })
         setModalShow(true)
       }}>show modal</Button>

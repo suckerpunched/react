@@ -17,7 +17,7 @@ class Modal extends Component {
 
   render() {
     return (
-      <>
+      <div style={{ overflow:"hidden" }}>
         <Backdrop show={this.props.show} clicked={this.props.backdrop_clicked} />
         <RebassBox
           fontSize={[3, 5, 7]}
@@ -33,7 +33,7 @@ class Modal extends Component {
         >
           {this.props.children}
         </RebassBox>
-      </>
+      </div>
     );
   }
 }

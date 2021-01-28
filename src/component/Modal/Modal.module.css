@@ -3,6 +3,8 @@
 
     width: 70%;
     min-height: 450px;
+    max-height: 60%;
+    overflow-y: scroll;
 
     z-index: 200;
 
