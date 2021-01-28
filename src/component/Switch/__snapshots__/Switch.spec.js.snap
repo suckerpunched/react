@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Switch matches the snapshot 1`] = `
+<button
+  aria-checked={false}
+  className="css-bffczt"
+  onClick={[Function]}
+  role="switch"
+  type="button"
+>
+  <div
+    aria-hidden={true}
+    className="css-pxmhqy"
+    style={
+      Object {
+        "transform": "translateX(0)",
+      }
+    }
+  />
+</button>
+`;

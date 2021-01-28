@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Modal matches the snapshot 1`] = `
+<div
+  style={
+    Object {
+      "overflow": "hidden",
+    }
+  }
+>
+  <div
+    className="mainDiv css-1bavgy4"
+    style={
+      Object {
+        "display": "none",
+        "transform": "translateY(-100vh)",
+      }
+    }
+  >
+    Modal
+  </div>
+</div>
+`;
