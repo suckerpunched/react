@@ -20,6 +20,9 @@ class Modal extends Component {
       <div style={{ overflow:"hidden" }}>
         <Backdrop show={this.props.show} clicked={this.props.backdrop_clicked} />
         <RebassBox
+          sx={{
+            borderRadius: 'modal_border_radius'
+          }}
           fontSize={[3, 5, 7]}
           fontWeight="bold"
           bg="modal_background"

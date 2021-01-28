@@ -9,7 +9,7 @@ exports[`Modal matches the snapshot 1`] = `
   }
 >
   <div
-    className="mainDiv css-1bavgy4"
+    className="mainDiv css-2gvdoo"
     style={
       Object {
         "display": "none",

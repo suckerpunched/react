@@ -23,5 +23,8 @@ export default {
         modal_background: "#eadcf2",
       }
     }
+  },
+  radii: {
+    modal_border_radius: '16px',
   }
 };
