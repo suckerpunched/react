@@ -22,7 +22,9 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --env=jest-environment-jsdom-sixteen",
+    "test:coverage:integration": "react-scripts test --watchAll=false --env=jest-environment-jsdom-sixteen --coverage --testPathPattern=\"integration.test.js\" --verbose",
+    "test:coverage:unit": "react-scripts test --watchAll=false --env=jest-environment-jsdom-sixteen --coverage --testPathPattern=\"unit.test.js\" --verbose",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -44,7 +46,14 @@
     ]
   },
   "devDependencies": {
-    "@types/jest": "^26.0.20",
-    "react-test-renderer": "^17.0.1"
+    "@testing-library/react-hooks": "^3.2.1",
+    "jest-environment-jsdom-sixteen": "^1.0.3",
+    "react-test-renderer": "^16.13.1"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/component/**/{!(index),}.js",
+      "src/container/**/{!(Playground),}/*.js"
+    ]
   }
 }

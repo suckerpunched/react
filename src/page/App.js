@@ -1,9 +1,9 @@
 import React from 'react';
 import { Route, Switch, Redirect, withRouter } from 'react-router-dom';
 
-const Playground = React.lazy(() => import('./Playground'))
-const PlaygroundModal = React.lazy(() => import('./PlaygroundModal'))
-const PlaygroundForm = React.lazy(() => import('./PlaygroundForm'))
+const Playground = React.lazy(() => import('../container/Playground/Playground'))
+const PlaygroundModal = React.lazy(() => import('../container/Playground/PlaygroundModal'))
+const PlaygroundForm = React.lazy(() => import('../container/Playground/PlaygroundForm'))
 
 function App() {
 

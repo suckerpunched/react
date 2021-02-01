@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import * as _type from '../store/action';
+import * as _type from '../../store/action';
 
 import { Flex, Box } from 'rebass';
 import {
@@ -8,7 +8,7 @@ import {
   Input,
 } from '@rebass/forms'
 
-import { Modal, Button, Text, Form } from '../component';
+import { Modal, Button, Text, Form } from '../../component';
 
 export default function PlaygroundForm(props) {
   const dispatch = useDispatch();

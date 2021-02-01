@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { useColorMode } from 'theme-ui'
 import { useDispatch, useSelector } from 'react-redux';
-import * as _type from '../store/action';
+import * as _type from '../../store/action';
 
 import { Flex, Box } from 'rebass';
 
-import { Text, Modal, Switch, Button } from '../component';
+import { Text, Modal, Switch, Button } from '../../component';
 
 export default function Playground(props) {
   const dispatch = useDispatch();

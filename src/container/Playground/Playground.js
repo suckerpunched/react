@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Table } from "../component";
+import { Table } from "../../component";
 import data from './data';
 
 export default function Playground(props) {

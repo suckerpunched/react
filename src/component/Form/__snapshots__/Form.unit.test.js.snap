@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Form matches the snapshot 1`] = `
+<form
+  className="css-vurnku"
+  onSubmit={[Function]}
+>
+  Form
+</form>
+`;
