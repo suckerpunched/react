@@ -52,7 +52,6 @@
   },
   "jest": {
     "collectCoverageFrom": [
-      "src/component/**/{!(index),}.js",
       "src/container/**/{!(Playground),}/*.js"
     ]
   }
