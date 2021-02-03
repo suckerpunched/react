@@ -18,3 +18,5 @@ export function persistable(currentState, action) {
   }
   
 }
+
+// export function drop(currentState, initalState, )

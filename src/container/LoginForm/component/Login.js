@@ -1,27 +1,20 @@
 import React from "react";
-import { useSelector } from 'react-redux';
 import { Box, Typography } from "@material-ui/core";
 import { LoginForm } from "./LoginForm";
 
-export function Login({ onSubmit }) {
-  const [ status, user, error ] = useSelector(state => [
-      state.login.status,
-      state.login.user,
-      state.login.error
-  ])
-
-  if (user) {
+export function Login({state, onSubmit}) {
+  if (state.user) {
     return (
       <Box m={1}>
         <Typography variant="body1">
-          Logged in as <b>{user.email}</b>
+          Logged in as <b>{state.user.email}</b>
         </Typography>
       </Box>
     );
   }
 
-  const isLoading = status === "pending";
-  const isError = status === "rejected";
+  const isLoading = state.status === "pending";
+  const isError = state.status === "rejected";
 
   return (
     <>
@@ -29,7 +22,7 @@ export function Login({ onSubmit }) {
       {isError && (
         <Box m={1}>
           <Typography variant="body1">
-            <b>Error: </b> {error}
+            <b>Error: </b> {state.error}
           </Typography>
         </Box>
       )}

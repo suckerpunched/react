@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Text matches the snapshot 1`] = `
-<div
-  className="css-id8j3u"
->
-  Text
-</div>
-`;
