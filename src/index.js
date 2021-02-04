@@ -1,31 +1,26 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { HashRouter } from 'react-router-dom';
+import React from "react";
+import ReactDOM from "react-dom";
+import { HashRouter } from "react-router-dom";
 
-import { Provider } from 'react-redux';
-import { ThemeProvider } from 'theme-ui';
-import theme from './theme';
+import { ThemeProvider } from "theme-ui";
+import theme from "./theme";
 
-import reportWebVitals from './reportWebVitals';
-import App from './container/App';
+import reportWebVitals from "./reportWebVitals";
+import App from "./pages/App";
 
-import store from './store';
-
-import './index.css';
+import "./index.css";
 
 const application = (
   <ThemeProvider theme={theme}>
-    <Provider store={store}>
-      <HashRouter>
-        <React.Suspense fallback={<div/>}>
-          <App/>
-        </React.Suspense>
-      </HashRouter>
-    </Provider>
+    <HashRouter>
+      <React.Suspense fallback={<div />}>
+        <App />
+      </React.Suspense>
+    </HashRouter>
   </ThemeProvider>
 );
 
-ReactDOM.render(application, document.getElementById('root'));
+ReactDOM.render(application, document.getElementById("root"));
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
