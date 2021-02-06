@@ -3,9 +3,7 @@ import * as _type from '../containers/hooks';
 
 import { LoginContext } from '../containers/hooks/useLogin/useLogin';
 
-import LoginModule from '../containers/LoginModule';
-
-export default function Login(props) {
+export default function Home(props) {
   const {state, dispatch} = useContext(LoginContext);
 
   useEffect(() => {
@@ -13,9 +11,6 @@ export default function Login(props) {
   });
 
   return (
-    <>
-      <LoginModule />
-      <pre>{JSON.stringify(state, null, 2)}</pre>
-    </>
+    <pre>{JSON.stringify(state, null, 2)}</pre>
   )
 }

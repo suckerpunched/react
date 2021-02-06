@@ -1,6 +1,6 @@
 import { renderHook, act } from "@testing-library/react-hooks";
 
-import useLogin from "./useLogin";
+import { useLogin } from "./useLogin";
 
 describe("useLogin", () => {
 

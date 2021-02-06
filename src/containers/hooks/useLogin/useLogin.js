@@ -1,5 +1,6 @@
-import { useReducer, useCallback } from "react";
-import * as _type from "./actions";
+import { useReducer, useCallback, createContext, useContext } from "react";
+import persistable from '../shared/persistable';
+import * as _type from "../";
 
 function reducer(state, action) {
   switch (action.type) {
@@ -25,19 +26,25 @@ function reducer(state, action) {
         error: null,
       };
 
-    /* istanbul ignore next */
-    default: {
-      throw new Error(`Unhandled action type: ${action.type}`);
-    }
+    default: return persistable(state, action);
   }
 }
 
-export default function useLogin() {
+
+export const LoginContext = createContext(null);
+export const LoginProvider = (props) => {
   const [state, dispatch] = useReducer(reducer, {
-    status: "idle",
+    status: 'idle',
     user: null,
     error: null,
   });
+  return (
+    <LoginContext.Provider value={{state,dispatch}}>{props.children}</LoginContext.Provider>
+  );
+};
+
+export function useLogin() {
+  const {state, dispatch} = useContext(LoginContext);
 
   const onSubmit = useCallback(async ({ email, password }) => {
     dispatch({ type:_type.LOGIN_START });
@@ -60,6 +67,7 @@ export default function useLogin() {
         type:_type.LOGIN_SUCCESS,
         user: { email },
       });
+      dispatch({ type:_type.SAVE_SESSION, payload:'login' });
     } else {
       dispatch({
         type:_type.LOGIN_ERROR,

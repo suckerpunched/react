@@ -1,5 +1,5 @@
 import React from 'react';
-import useLogin from '../hooks/useLogin/useLogin';
+import { useLogin } from '../hooks/useLogin/useLogin';
 import Login from './components/Login';
 
 export default function LoginModule() {
