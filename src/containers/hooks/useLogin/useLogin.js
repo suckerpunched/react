@@ -1,5 +1,4 @@
 import { useReducer, useCallback, createContext, useContext } from "react";
-import persistable from '../shared/persistable';
 import * as _type from "../";
 
 function reducer(state, action) {
@@ -26,7 +25,10 @@ function reducer(state, action) {
         error: null,
       };
 
-    default: return persistable(state, action);
+    /* istanbul ignore next */
+    default: 
+      throw new Error(`Unhandled action type: ${action.type}`);
+    
   }
 }
 
@@ -67,7 +69,6 @@ export function useLogin() {
         type:_type.LOGIN_SUCCESS,
         user: { email },
       });
-      dispatch({ type:_type.SAVE_SESSION, payload:'login' });
     } else {
       dispatch({
         type:_type.LOGIN_ERROR,

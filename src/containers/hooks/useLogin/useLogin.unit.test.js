@@ -1,11 +1,12 @@
 import { renderHook, act } from "@testing-library/react-hooks";
 
-import { useLogin } from "./useLogin";
+import { useLogin, LoginProvider } from "./useLogin";
 
 describe("useLogin", () => {
 
   test("initial state", () => {
-    const { result } = renderHook(() => useLogin());
+    const wrapper = ({children}) => (<LoginProvider>{children}</LoginProvider>);
+    const { result } = renderHook(() => useLogin(), { wrapper });
     expect(result.current.state).toEqual({
       status: "idle",
       user: null,
@@ -18,7 +19,8 @@ describe("useLogin", () => {
       .spyOn(window, "fetch")
       .mockResolvedValue({ json: () => ({ token: "123" }) });
 
-    const { result, waitForNextUpdate } = renderHook(() => useLogin());
+    const wrapper = ({children}) => (<LoginProvider>{children}</LoginProvider>);
+    const { result, waitForNextUpdate } = renderHook(() => useLogin(), { wrapper });
 
     act(() => {
       result.current.onSubmit({
@@ -51,7 +53,8 @@ describe("useLogin", () => {
       .spyOn(window, "fetch")
       .mockResolvedValue({ json: () => ({ error: "invalid password" }) });
 
-    const { result, waitForNextUpdate } = renderHook(() => useLogin());
+    const wrapper = ({children}) => (<LoginProvider>{children}</LoginProvider>);
+    const { result, waitForNextUpdate } = renderHook(() => useLogin(), { wrapper });
 
     act(() => {
       result.current.onSubmit({
