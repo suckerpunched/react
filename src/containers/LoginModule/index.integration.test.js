@@ -1,11 +1,14 @@
 import React from 'react';
 import { render, fireEvent, waitFor, screen } from '@testing-library/react';
+
+import { LoginProvider } from '../hooks/useLogin/useLogin' 
 import LoginModule from './';
 
 describe('LoginModule', () => {
 
   test('initial state', () => {
-    render(<LoginModule />);
+    const wrapper = ({children}) => (<LoginProvider>{children}</LoginProvider>);
+    render(<LoginModule />, { wrapper });
 
     // it renders empty email and passsword fields
     const emailField = screen.getByRole('textbox', { name: 'Email' });
@@ -24,7 +27,9 @@ describe('LoginModule', () => {
       .spyOn(window, 'fetch')
       .mockResolvedValue({ json: () => ({ token: '123' }) });
 
-    render(<LoginModule />);
+    
+    const wrapper = ({children}) => (<LoginProvider>{children}</LoginProvider>);
+    render(<LoginModule />, { wrapper });
 
     const emailField = screen.getByRole('textbox', { name: 'Email' });
     const passwordField = screen.getByLabelText('Password');
@@ -58,7 +63,8 @@ describe('LoginModule', () => {
       .spyOn(window, 'fetch')
       .mockResolvedValue({ json: () => ({ error: 'invalid password' }) });
 
-    render(<LoginModule />);
+    const wrapper = ({children}) => (<LoginProvider>{children}</LoginProvider>);
+    render(<LoginModule />, { wrapper });
 
     const emailField = screen.getByRole('textbox', { name: 'Email' });
     const passwordField = screen.getByLabelText('Password');
