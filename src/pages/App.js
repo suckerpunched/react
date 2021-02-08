@@ -10,16 +10,15 @@ function App() {
 
   return (
     <>
-      <Switch>
+      <LoginProvider>
 
-        <LoginProvider>
+        <Switch>
           <Route exact path='/login' render={(props) => <Login {...props}/>}/>
           <Route exact path='/home' render={(props) => <Home {...props}/>}/>
-        </LoginProvider>
-
-        <Redirect from='*' to='/login'/>
+          <Redirect from='*' to='/login'/>
+        </Switch>
       
-      </Switch>
+      </LoginProvider>
     </>
   )
   
